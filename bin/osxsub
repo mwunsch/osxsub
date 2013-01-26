@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+require File.expand_path File.join(File.dirname(__FILE__), "/../lib/osxsub")
+require 'rexml/document'
+
+xml = OsxSub::NSUserReplacementItems.print
+
+doc = REXML::Document.new(xml, :ignore_whitespace_nodes => :all)
+plist = doc.elements['plist/array'].map do |dict|
+  tuple = dict.each.select {|node| node.has_name?("key") }.map do |key|
+    [key.text, key.next_element.text]
+  end
+  Hash[tuple]
+end
+
+substitutions = plist.map {|dict| OsxSub::Substitution.new(dict['replace'], dict['with'], dict['on']) }
+
+$stdin.each_line do |line|
+  $stdout.write substitutions.select(&:on?).inject(line) {|memo, obj| obj.sub(memo) }
+end
+
+exit
