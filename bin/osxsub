@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 $:.unshift File.expand_path File.join(File.dirname(__FILE__), "/../lib")
 require 'osxsub'
-require 'rexml/document'
 
 $stdin.each_line do |line|
   $stdout.write OsxSub::NSUserReplacementItems.from_plist_buddy.sub(line)
