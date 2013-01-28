@@ -83,14 +83,6 @@ module OsxSub
       template.result(binding)
     end
 
-    def temp_plist_file
-      require 'tempfile'
-      tmp_file = Tempfile.new("nsuser_replacement_items_plist")
-      tmp_file.write to_plist
-      tmp_file.rewind
-      tmp_file
-    end
-
     def merge!
       tmp_file = temp_plist_file
       PlistBuddy.instance.merge tmp_file.path
@@ -99,6 +91,16 @@ module OsxSub
         tmp_file.close
         tmp_file.unlink
       end
+    end
+
+  private
+
+    def temp_plist_file
+      require 'tempfile'
+      tmp_file = Tempfile.new("nsuser_replacement_items_plist")
+      tmp_file.write to_plist
+      tmp_file.rewind
+      tmp_file
     end
   end
 end
