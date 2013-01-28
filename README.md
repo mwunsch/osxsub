@@ -42,15 +42,16 @@ Some more options can be given to the tool to make managing your Preferences eas
 
 ## Installation
 
-For now, just clone the repository and put the `bin` directory somewhere on your `$PATH`.
+A Homebrew Formula is available, but has yet to be moved to the master Homebrew repo: https://gist.github.com/4657560
 
 Alternatively, `osxsub` is available as a Rubygem.
 
     $ gem install osxsub
 
+Or clone the repository and put the `bin` directory somewhere on your `$PATH`.
+
 ## TODO
 
-+ Homebrew Formula
 + Manpages
 + Documentation
 + Tests
