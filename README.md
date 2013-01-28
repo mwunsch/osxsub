@@ -42,7 +42,7 @@ Some more options can be given to the tool to make managing your Preferences eas
 
 ## Installation
 
-A Homebrew Formula is available, but has yet to be moved to the master Homebrew repo: https://gist.github.com/4657560
+    brew install https://raw.github.com/mwunsch/osxsub/master/share/osxsub.rb
 
 Alternatively, `osxsub` is available as a Rubygem.
 
