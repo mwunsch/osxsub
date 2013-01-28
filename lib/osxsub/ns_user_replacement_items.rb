@@ -82,7 +82,7 @@ module OsxSub
     end
 
     def to_plist
-      template = ERB.new(PLIST_TEMPLATE)
+      template = ERB.new(PLIST_TEMPLATE, nil, '>')
       template.result(binding)
     end
 
