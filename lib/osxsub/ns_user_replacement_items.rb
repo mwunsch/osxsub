@@ -2,6 +2,8 @@ require 'rexml/document'
 
 module OsxSub
   class NSUserReplacementItems
+    require 'erb'
+
     PLIST_TEMPLATE = <<-PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -14,9 +16,9 @@ module OsxSub
 		<integer>1</integer>
     <% end %>
 		<key>replace</key>
-		<string><%= substitution.replace %></string>
+		<string><%= html_escape substitution.replace %></string>
 		<key>with</key>
-		<string><%= substitution.with %></string>
+		<string><%= html_escape substitution.with %></string>
 	</dict>
   <% end %>
 </array>
@@ -67,6 +69,8 @@ module OsxSub
       self.new(default_substitutions)
     end
 
+    include ERB::Util
+
     attr_reader :substitutions
 
     def initialize(substitutions)
@@ -78,7 +82,6 @@ module OsxSub
     end
 
     def to_plist
-      require 'erb'
       template = ERB.new(PLIST_TEMPLATE)
       template.result(binding)
     end
