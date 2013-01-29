@@ -53,7 +53,6 @@ Or clone the repository and put the `bin` directory somewhere on your `$PATH`.
 ## TODO
 
 + Manpages
-+ OS X Service
 + Documentation
 + Tests
 
