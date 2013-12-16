@@ -12,7 +12,7 @@ module OsxSub
 
     PLIST_BUDDY = '/usr/libexec/PlistBuddy'
     GLOBAL_PREFERENCES_PLIST = File.expand_path('~/Library/Preferences/.GlobalPreferences.plist')
-    NSUSER_REPLACEMENT_ITEMS = 'NSUserReplacementItems'
+    NSUSER_REPLACEMENT_ITEMS = 'NSUserDictionaryReplacementItems'
 
     def print
       execute plist_buddy(:print)
