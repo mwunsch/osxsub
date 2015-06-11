@@ -7,7 +7,7 @@ Basic usage is like this:
     $ echo "Copyright (c) 2013 Mark Wunsch" | osxsub
       Copyright © 2013 Mark Wunsch
 
-Text Substitutions are available for a handful of Mac applications, and can be set up by going to `System Preferences -> Language & Text` and selecting the `Text` tab.
+Text Substitutions are available for a handful of Mac applications, and can be set up by going to `System Preferences -> Keyboard` and selecting the `Text` tab.
 
 Read more about OS X Text Substitution:
 
@@ -40,6 +40,10 @@ Some more options can be given to the tool to make managing your Preferences eas
     $ osxsub --repl
     ## Start an interactive session to test out substitutions.
 
+Note: Somewhere between OS X Mavericks and Yosemite the text substitution engine got a little out of whack. If you use osxsub, you might notice that your custom shortcuts do not appear in `System Preferences`.
+Because of some weird iCloud sync thing there's also some Core Data database lurking around that complicates all of this. I'm working on trying to make osxsub work well in our new C L O U D W O R L D.
+In the mean time, read more about this strange behavior here: http://apple.stackexchange.com/questions/124048/where-is-the-replace-with-list-stored
+
 ## Installation
 
     brew install https://raw.github.com/mwunsch/osxsub/master/share/osxsub.rb
@@ -56,4 +60,4 @@ Or clone the repository and put the `bin` directory somewhere on your `$PATH`.
 + Documentation
 + Tests
 
-Copyright © 2013 Mark Wunsch.
+Copyright © 2013 - 2015 Mark Wunsch.

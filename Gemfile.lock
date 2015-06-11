@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    osxsub (0.1.2)
+    osxsub (0.2.0)
 
 GEM
   remote: http://rubygems.org/
