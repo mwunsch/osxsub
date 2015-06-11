@@ -41,8 +41,14 @@ Some more options can be given to the tool to make managing your Preferences eas
     ## Start an interactive session to test out substitutions.
 
 Note: Somewhere between OS X Mavericks and Yosemite the text substitution engine got a little out of whack. If you use osxsub, you might notice that your custom shortcuts do not appear in `System Preferences`.
-Because of some weird iCloud sync thing there's also some Core Data database lurking around that complicates all of this. I'm working on trying to make osxsub work well in our new C L O U D W O R L D.
+Because of some weird iCloud sync thing there's also some Core Data database lurking around that complicates all of this. I'm working on trying to make osxsub work well in our new `_C L O U D W O R L D_`.
 In the mean time, read more about this strange behavior here: http://apple.stackexchange.com/questions/124048/where-is-the-replace-with-list-stored
+
+If your changes don't take place after you restart an application, try running this command:
+
+    $ defaults read -g NSUserDictionaryReplacementItems
+
+Still trying to understand how to make this stick.
 
 ## Installation
 
